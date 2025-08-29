@@ -15,6 +15,7 @@ pipeline {
                 sh """
                     cd middlewaresw
                     bash ./build.sh
+                    zip -r -j middlewaresw.zip build/middlewaresw
                 """
             }
         }
@@ -40,6 +41,7 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'middlewaresw/coverage_html.zip', fingerprint: true
             archiveArtifacts artifacts: 'middlewaresw/gtestresults.xml', fingerprint: true
+            archiveArtifacts artifacts: 'middlewaresw/middlewaresw.zip', fingerprint: true
             xunit (
                 thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0') ],
                 tools: [ GoogleTest(pattern: 'middlewaresw/gtestresults.xml') ]
