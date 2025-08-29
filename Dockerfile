@@ -1,5 +1,5 @@
 # Start from the base Ubuntu image
-FROM jenkins/jenkins:latest
+FROM jenkins/jenkins:jdk21
 
 # Set a working directory inside the container
 WORKDIR /app
