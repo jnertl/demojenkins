@@ -24,6 +24,9 @@ RUN apt-get update \
 RUN apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+RUN apt update && curl -fsSL https://get.docker.com | sh
+RUN usermod -aG docker jenkins
+
 # Install Google Test
 RUN git clone -q https://github.com/google/googletest.git /googletest \
   && mkdir -p /googletest/build \
@@ -160,4 +163,4 @@ RUN jenkins-plugin-cli \
     workflow-step-api \
     workflow-support \
     ws-cleanup \
-    xUnit
+    xunit
