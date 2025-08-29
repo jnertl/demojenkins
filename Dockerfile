@@ -159,4 +159,5 @@ RUN jenkins-plugin-cli \
     workflow-scm-step \
     workflow-step-api \
     workflow-support \
-    ws-cleanup
+    ws-cleanup \
+    xUnit

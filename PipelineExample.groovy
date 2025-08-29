@@ -39,6 +39,11 @@ pipeline {
     post {
         always {
             archiveArtifacts artifacts: 'middlewaresw/coverage_html.zip', fingerprint: true
+            archiveArtifacts artifacts: 'middlewaresw/gtestresults.xml', fingerprint: true
+            xunit (
+                thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0') ],
+                tools: [ GoogleTest(pattern: 'middlewaresw/gtestresults.xml') ]
+            )            
         }
     }    
 }
