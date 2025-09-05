@@ -19,6 +19,7 @@ RUN apt-get update \
     libgtest-dev \
     valgrind \
     libprotobuf-dev protobuf-compiler \
+    npm \
     python3 python3-pip python3-venv
 
 RUN apt-get clean \
