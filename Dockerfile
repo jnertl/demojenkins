@@ -31,7 +31,7 @@ RUN apt update && curl -fsSL https://get.docker.com | sh
 RUN usermod -aG docker jenkins
 
 # Install Go and mcphost
-RUN WGET https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
+RUN wget https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.25.1.linux-amd64.tar.gz
 RUN GOBIN=/usr/local/bin/ /usr/local/go/bin/go install github.com/mark3labs/mcphost@latest
 
