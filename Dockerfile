@@ -22,6 +22,8 @@ RUN apt-get update \
     npm \
     wget \
     libwww-perl \
+    iproute2 \
+    net-tools \
     python3 python3-pip python3-venv
 
 RUN apt-get clean \
