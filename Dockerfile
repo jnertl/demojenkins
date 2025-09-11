@@ -20,6 +20,8 @@ RUN apt-get update \
     valgrind \
     libprotobuf-dev protobuf-compiler \
     npm \
+    wget \
+    perl \
     python3 python3-pip python3-venv
 
 RUN apt-get clean \
@@ -27,6 +29,11 @@ RUN apt-get clean \
 
 RUN apt update && curl -fsSL https://get.docker.com | sh
 RUN usermod -aG docker jenkins
+
+# Install Go and mcphost
+RUN WGET https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
+RUN tar -C /usr/local -xzf go1.25.1.linux-amd64.tar.gz
+RUN GOBIN=/usr/local/bin/ /usr/local/go/bin/go install github.com/mark3labs/mcphost@latest
 
 # Install Google Test
 RUN git clone -q https://github.com/google/googletest.git /googletest \
