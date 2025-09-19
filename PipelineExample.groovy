@@ -15,7 +15,7 @@ pipeline {
                 sh """
                     cd middlewaresw
                     bash ./build.sh
-                    zip -r -j middlewaresw.zip build/middlewaresw
+                    zip -r -j middlewaresw.zip build_application/middlewaresw
                 """
             }
         }

@@ -21,6 +21,7 @@ RUN apt-get update \
     libprotobuf-dev protobuf-compiler \
     npm \
     wget \
+    nano \
     python3 python3-pip python3-venv
 # For debugging add:  libwww-perl iproute2 net-tools
 
