@@ -35,6 +35,9 @@ RUN wget https://go.dev/dl/go1.25.1.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf go1.25.1.linux-amd64.tar.gz
 RUN GOBIN=/usr/local/bin/ /usr/local/go/bin/go install github.com/mark3labs/mcphost@latest
 
+# install uv
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+
 # Install Google Test
 RUN git clone -q https://github.com/google/googletest.git /googletest \
   && mkdir -p /googletest/build \
