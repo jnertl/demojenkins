@@ -14,7 +14,7 @@ This project provides a Docker setup for running Jenkins with Python and additio
    ```
 2. **Run the container:**
    ```bash
-   docker run -p 8080:8080 -p 50000:50000 demojenkins
+   docker run --name demojenkins --detach --privileged --network="host" --restart=on-failure -u root -v /var/run/docker.sock:/var/run/docker.sock -v jenkins_home:/var/jenkins_home/ jenkins_demo:latest
    ```
 
 Jenkins will be available at `http://localhost:8080`.
