@@ -23,7 +23,24 @@ RUN apt-get update \
     wget \
     nano \
     bc \
-    python3 python3-pip python3-venv
+    python3 python3-pip python3-venv \
+    libx11-xcb1 \
+    libxrender1 \
+    libxcb1 \
+    libxcb-glx0 \
+    libxcb-keysyms1 \
+    libxcb-image0 \
+    libxcb-shm0 \
+    libxcb-icccm4 \
+    libxcb-sync1 \
+    libxcb-xfixes0 \
+    libxcb-shape0 \
+    libxcb-randr0 \
+    libxcb-render-util0 \
+    libxcb-xinerama0 \
+    libxcb-xkb1 \
+    libxkbcommon-x11-0
+
 # For debugging add:  libwww-perl iproute2 net-tools
 
 RUN apt-get clean \
@@ -181,4 +198,5 @@ RUN jenkins-plugin-cli \
     workflow-step-api \
     workflow-support \
     ws-cleanup \
-    xunit
+    xunit \
+    xvfb
