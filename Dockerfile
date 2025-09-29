@@ -1,5 +1,5 @@
 # Start from the base Ubuntu image
-FROM jenkins/jenkins:jdk21
+FROM jenkins/jenkins:latest-jdk21
 
 # Set a working directory inside the container
 WORKDIR /app
@@ -97,6 +97,10 @@ RUN jenkins-plugin-cli \
     credentials-binding \
     dark-theme \
     display-url-api \
+    docker-commons \
+    docker-java-api \
+    docker-plugin \
+    docker-workflow \
     durable-task \
     echarts-api \
     eddsa-api \
@@ -156,6 +160,7 @@ RUN jenkins-plugin-cli \
     scm-api \
     script-security \
     snakeyaml-api \
+    ssh-agent \
     sse-gateway \
     ssh-credentials \
     ssh-slaves \
