@@ -39,7 +39,8 @@ RUN apt-get update \
     libxcb-render-util0 \
     libxcb-xinerama0 \
     libxcb-xkb1 \
-    libxkbcommon-x11-0
+    libxkbcommon-x11-0 \
+    libgl1
 
 # For debugging add:  libwww-perl iproute2 net-tools
 
