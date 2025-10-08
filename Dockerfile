@@ -126,6 +126,7 @@ RUN jenkins-plugin-cli \
     email-ext \
     favorite \
     font-awesome-api \
+    generic-webhook-trigger \
     git \
     git-client \
     github \
