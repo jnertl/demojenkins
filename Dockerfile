@@ -43,6 +43,10 @@ RUN apt-get update \
     libgl1 \
     gdb
 
+# Install libraries for middlware build
+RUN apt-get install -y --no-install-recommends \
+    libsqlite3-dev
+
 # For debugging add:  libwww-perl iproute2 net-tools
 
 RUN apt-get clean \
